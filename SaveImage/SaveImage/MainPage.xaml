@@ -4,7 +4,8 @@
              x:Class="SaveImage.MainPage"
              NavigationPage.HasNavigationBar="False"
              Visual="Default"
-             BackgroundColor="White">
+             BackgroundColor="White"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
     
     <RefreshView BackgroundColor="White" x:Name="UpdateView" Refreshing="UpdateView_Refreshing">
         <ScrollView>
@@ -47,7 +48,7 @@
                 <ListView
             x:Name="LVProject"
             HasUnevenRows="True"
-           ItemSelected="LVProject_ItemSelected">
+           ItemSelected="LVProject_ItemSelected" CachingStrategy="RecycleElement">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -65,7 +66,7 @@
                                    
                                     <Label Text="{Binding Name}" TextColor="Black" FontSize="19" />
                                         <Image Source="{Binding Puth }" HeightRequest="160" x:Name="Imageq" HorizontalOptions="CenterAndExpand"/>
-
+                                        
                                     </StackLayout>
 
                                 </SwipeView>

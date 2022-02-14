@@ -4,6 +4,10 @@ using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
+using FFImageLoading;
+using FFImageLoading.Config;
+using System.IO;
+
 
 namespace SaveImage.Droid
 {
@@ -17,6 +21,13 @@ namespace SaveImage.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
+
+            var config = new Configuration
+            {
+                
+                FadeAnimationDuration = 150,  
+            };
+            FFImageLoading.ImageService.Instance.Initialize(config);
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
@@ -24,5 +35,6 @@ namespace SaveImage.Droid
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+
     }
 }

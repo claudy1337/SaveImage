@@ -46,6 +46,7 @@ namespace SaveImage
             img.Name = Name.Text;
             img.Puth = pathName;
             App.Db.SaveItem(img);
+            Name.Text = "";
             UpdateList();
         }
         private async void PhotoGetAsync_Clicked(object sender, EventArgs e)
@@ -105,8 +106,8 @@ namespace SaveImage
 
         private async void SwipeItem_Invoked(object sender, EventArgs e)
         {
-            var project = (ImageS)BindingContext;
-                App.Db.DeleteItem(project.Id);
+            //var project = (ImageS)BindingContext;
+            //    App.Db.DeleteItem(project.Id);
            
         }
     }

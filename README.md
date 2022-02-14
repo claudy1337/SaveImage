@@ -3,6 +3,8 @@ Database saving a photo
 Сохранение фотографии из камеры или галереи в проект
 - MainPage
 - Page/SelectedPage
+- zoom mod picture `Extension`
+- deleted project in `swipeView`
 
 DATA BASE
 ===========

@@ -82,17 +82,13 @@ namespace SaveImage
             }
         }
 
-
-
         private async void UpdateView_Refreshing(object sender, EventArgs e)
         {
-            await Task.Delay(3000);
+            await Task.Delay(1000);
             UpdateView.IsRefreshing = false;
             UpdateList();
 
         }
-
-
 
         private async void LVProject_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
@@ -100,6 +96,15 @@ namespace SaveImage
             SelectedPage imagePage = new SelectedPage();
             imagePage.BindingContext = selectedImage;
             await Navigation.PushAsync(imagePage);
+        }
+
+
+
+        private async void SwipeItem_Invoked(object sender, EventArgs e)
+        {
+            var project = (ImageS)BindingContext;
+                App.Db.DeleteItem(project.Id);
+           
         }
     }
 }

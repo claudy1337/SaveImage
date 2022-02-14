@@ -36,7 +36,6 @@
             </StackLayout>
 
                 <StackLayout>
-
                     <Button Text="Добавить"
              x:Name="AddImage"
              Clicked="AddImage_Clicked"
@@ -44,20 +43,40 @@
              BackgroundColor="#00b2ff"
               TextColor="White"/>
                 </StackLayout>
-
-                <ListView  x:Name="LVProject"
-            ItemSelected="LVProject_ItemSelected"
-              HasUnevenRows="True"
-              ItemsSource="{Binding}" >
+                
+                <ListView
+            x:Name="LVProject"
+            HasUnevenRows="True"
+           ItemSelected="LVProject_ItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <ImageCell
-                        ImageSource="{Binding Puth} "
-                        Text="{Binding Name}"
-                              TextColor="Black"/>
+                            <ViewCell>
+                                <SwipeView>
+                                    <SwipeView.RightItems>
+
+                                        <SwipeItems>
+                                            <SwipeItem Text="Delete"
+                                     BackgroundColor="LightPink"
+                                                       Invoked="SwipeItem_Invoked"/>
+                                        </SwipeItems>
+                                    </SwipeView.RightItems>
+                                    <StackLayout>
+                                        
+                                   
+                                    <Label Text="{Binding Name}" TextColor="Black" FontSize="15"/>
+                                        <Image Source="{Binding Puth }" HeightRequest="130" />
+
+                                    </StackLayout>
+
+                                </SwipeView>
+                            </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
+
+
+
+                
 
             </StackLayout>
         </ScrollView>

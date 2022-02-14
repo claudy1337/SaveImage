@@ -16,6 +16,7 @@
                     HorizontalOptions="FillAndExpand"/>
         </StackLayout>
         <StackLayout>
+            
             <Button Text="Добавить" />
         </StackLayout>
     </StackLayout>

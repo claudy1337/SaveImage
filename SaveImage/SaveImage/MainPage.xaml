@@ -11,7 +11,7 @@
                  Visual="Material" 
                  RefreshColor="Black" 
                  Refreshing="UpdateWiev_Refreshing">
-        <ScrollView>
+        
             <StackLayout Padding="30" Spacing="30">
                 <StackLayout>
                     <Entry x:Name="Name" 
@@ -62,13 +62,14 @@
                                         
                                         <SwipeItems>
                                             <SwipeItem Text="Delete"
-                                     BackgroundColor="LightPink"/>
+                                             BackgroundColor="LightPink"
+                                             Clicked="SwipeItem_Clicked" />
                                         </SwipeItems>
                                     </SwipeView.RightItems>
                                     
                                     <StackLayout>
-                                        <Image Source="{Binding Puth }"/>
-                                        <Label Text="{Binding Name}" />
+                                        <Image Source="{Binding Puth }" HeightRequest="100"  HorizontalOptions="Start" WidthRequest="100"/>
+                                        <Label Text="{Binding Name}" TextColor="Black"/>
                                     </StackLayout>
                                     
                                 </SwipeView>
@@ -77,6 +78,6 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </StackLayout>
-        </ScrollView>
+    
     </RefreshView>
 </ContentPage>

@@ -96,5 +96,12 @@ namespace SaveImage
             UpdateWiev.IsRefreshing = false;
             UpdateList();
         }
+
+        private async void SwipeItem_Clicked(object sender, EventArgs e)
+        {
+            var project = (ImageS)BindingContext;
+            App.Db.DeleteItem(project.Id);
+          
+        }
     }
 }

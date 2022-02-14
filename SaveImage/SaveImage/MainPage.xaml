@@ -58,16 +58,15 @@
                         <DataTemplate>
                             <ViewCell>
                                 <SwipeView>
-                                    <SwipeView.RightItems>
-                                        
-                                        <SwipeItems>
-                                            <SwipeItem Text="Delete"
+                                <SwipeView.RightItems>
+
+                                    <SwipeItems>
+                                        <SwipeItem Text="Delete"
                                              BackgroundColor="LightPink"
                                              Clicked="SwipeItem_Clicked" />
-                                        </SwipeItems>
-                                    </SwipeView.RightItems>
-                                    
-                                    <StackLayout>
+                                    </SwipeItems>
+                                </SwipeView.RightItems>
+                                <StackLayout>
                                         <Image Source="{Binding Puth }" HeightRequest="100"  HorizontalOptions="Start" WidthRequest="100"/>
                                         <Label Text="{Binding Name}" TextColor="Black"/>
                                     </StackLayout>

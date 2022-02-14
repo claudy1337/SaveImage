@@ -3,10 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SaveImage.Page.SelectedPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="30" Spacing="30">
+            <Entry Text="{Binding Name}"
+               Visual="Material"
+               BackgroundColor="#e8e8e8"
+               IsReadOnly="True"
+               Placeholder="Name"/>
+
+            <Image Source="{Binding Puth}"
+                   WidthRequest="700"
+                   HeightRequest="400"
+                   Visual="Material"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

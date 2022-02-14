@@ -88,5 +88,12 @@ namespace SaveImage
             imagePage.BindingContext = selectedImage;
             await Navigation.PushAsync(imagePage);
         }
+
+        private void SwipeItem_Clicked(object sender, EventArgs e)
+        {
+            var project = (ImageS)BindingContext;
+            App.Db.DeleteItem(project.Id);
+            UpdateList();
+        }
     }
 }

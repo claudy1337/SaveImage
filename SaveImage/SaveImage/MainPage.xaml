@@ -42,7 +42,8 @@
               TextColor="White"/>
             
         </StackLayout>
-
+        
+        
         <ListView
             x:Name="imgList"
             HasUnevenRows="True"
@@ -50,10 +51,19 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout>
-                            <Image Source="{Binding Puth }" />
-                            <Label Text="{Binding Name}" />
-                        </StackLayout>
+                        <SwipeView>
+                            <SwipeView.RightItems>
+                                <SwipeItems>
+                                    <SwipeItem Text="Delete"
+                                     BackgroundColor="LightPink"
+                                     Clicked="SwipeItem_Clicked"/>
+                                </SwipeItems>
+                            </SwipeView.RightItems>
+                            <StackLayout>
+                                <Image Source="{Binding Puth }"/>
+                                <Label Text="{Binding Name}" />
+                            </StackLayout>
+                        </SwipeView>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>

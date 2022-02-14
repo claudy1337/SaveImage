@@ -15,7 +15,6 @@ using SaveImage.sql;
 using SaveImage.Page;
 
 
-
 namespace SaveImage
 {
     public partial class MainPage : ContentPage
@@ -28,14 +27,15 @@ namespace SaveImage
 
         protected override void OnAppearing()
         {
-            imgList.ItemsSource = App.Db.GetItems();
+            LVProject.ItemsSource = App.Db.GetItems();
             base.OnAppearing();
         }
 
         private void UpdateList()
         {
-            imgList.ItemsSource = App.Db.GetItems();
+            LVProject.ItemsSource = App.Db.GetItems();
         }
+
 
         private void AddImage_Clicked(object sender, EventArgs e)
         {
@@ -82,26 +82,24 @@ namespace SaveImage
             }
         }
 
-        private async void imgList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+
+
+        private async void UpdateView_Refreshing(object sender, EventArgs e)
+        {
+            await Task.Delay(3000);
+            UpdateView.IsRefreshing = false;
+            UpdateList();
+
+        }
+
+
+
+        private async void LVProject_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             ImageS selectedImage = (ImageS)e.SelectedItem;
             SelectedPage imagePage = new SelectedPage();
             imagePage.BindingContext = selectedImage;
             await Navigation.PushAsync(imagePage);
-        }
-
-        private async void UpdateWiev_Refreshing(object sender, EventArgs e)
-        {
-           await Task.Delay(1000);
-            UpdateWiev.IsRefreshing = false;
-            UpdateList();
-        }
-
-        private async void SwipeItem_Clicked(object sender, EventArgs e)
-        {
-            var project = (ImageS)BindingContext;
-            App.Db.DeleteItem(project.Id);
-          
         }
     }
 }

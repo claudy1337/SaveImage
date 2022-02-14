@@ -6,22 +6,18 @@
              Visual="Default"
              BackgroundColor="White">
     
-    <RefreshView x:Name="UpdateWiev" 
-                 IsRefreshing="False" 
-                 Visual="Material" 
-                 RefreshColor="Black" 
-                 Refreshing="UpdateWiev_Refreshing">
-        
+    <RefreshView BackgroundColor="White" x:Name="UpdateView" Refreshing="UpdateView_Refreshing">
+        <ScrollView>
             <StackLayout Padding="30" Spacing="30">
-                <StackLayout>
-                    <Entry x:Name="Name" 
+            <StackLayout>
+                <Entry x:Name="Name" 
                Placeholder="Введите название" 
                Visual="Material"
                BackgroundColor="#e8e8e8"/>
-                </StackLayout>
-                <StackLayout VerticalOptions="StartAndExpand" Orientation="Horizontal">
+            </StackLayout>
+            <StackLayout VerticalOptions="StartAndExpand" Orientation="Horizontal">
 
-                    <Button x:Name="TakePhoto" 
+                <Button x:Name="TakePhoto" 
                     Text="Камера" 
                     HorizontalOptions="FillAndExpand"
                     Clicked="TakePhoto_Clicked"
@@ -29,7 +25,7 @@
                     BackgroundColor="#00b2ff"
                     TextColor="White"/>
 
-                    <Button x:Name="PhotoGetAsync"
+                <Button x:Name="PhotoGetAsync"
                     Text="Галерея" 
                     HorizontalOptions="FillAndExpand"
                     Clicked="PhotoGetAsync_Clicked"
@@ -37,7 +33,7 @@
                     BackgroundColor="#00b2ff"
                     TextColor="White"/>
 
-                </StackLayout>
+            </StackLayout>
 
                 <StackLayout>
 
@@ -47,36 +43,24 @@
              CornerRadius="200"
              BackgroundColor="#00b2ff"
               TextColor="White"/>
-
                 </StackLayout>
-                
-                <ListView
-            x:Name="imgList"
-            HasUnevenRows="True"
-            ItemSelected="imgList_ItemSelected">
+
+                <ListView  x:Name="LVProject"
+            ItemSelected="LVProject_ItemSelected"
+              HasUnevenRows="True"
+              ItemsSource="{Binding}" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <ViewCell>
-                                <SwipeView>
-                                <SwipeView.RightItems>
-
-                                    <SwipeItems>
-                                        <SwipeItem Text="Delete"
-                                             BackgroundColor="LightPink"
-                                             Clicked="SwipeItem_Clicked" />
-                                    </SwipeItems>
-                                </SwipeView.RightItems>
-                                <StackLayout>
-                                        <Image Source="{Binding Puth }" HeightRequest="100"  HorizontalOptions="Start" WidthRequest="100"/>
-                                        <Label Text="{Binding Name}" TextColor="Black"/>
-                                    </StackLayout>
-                                    
-                                </SwipeView>
-                            </ViewCell>
+                            <ImageCell
+                        ImageSource="{Binding Puth} "
+                        Text="{Binding Name}"
+                              TextColor="Black"/>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
+
             </StackLayout>
-    
+        </ScrollView>
     </RefreshView>
+    
 </ContentPage>

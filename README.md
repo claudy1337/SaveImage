@@ -44,6 +44,10 @@ RefreshView and SwipeItems
 - `UpdateWiev` up swipe update project list
 - `SwipeDeleted` right swipe deleted project
 
+![f1](https://ie.wampi.ru/2022/02/15/f3.jpg)
+![f2](https://ie.wampi.ru/2022/02/15/f2.jpg)
+![zoom](https://ie.wampi.ru/2022/02/15/f1.jpg)
+
 
 author
 ===========

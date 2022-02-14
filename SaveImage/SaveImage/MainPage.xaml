@@ -5,16 +5,23 @@
              NavigationPage.HasNavigationBar="False"
              Visual="Default"
              BackgroundColor="White">
-    <StackLayout Padding="30" Spacing="30">
-        <StackLayout>
-            <Entry x:Name="Name" 
+    
+    <RefreshView x:Name="UpdateWiev" 
+                 IsRefreshing="False" 
+                 Visual="Material" 
+                 RefreshColor="Black" 
+                 Refreshing="UpdateWiev_Refreshing">
+        <ScrollView>
+            <StackLayout Padding="30" Spacing="30">
+                <StackLayout>
+                    <Entry x:Name="Name" 
                Placeholder="Введите название" 
                Visual="Material"
                BackgroundColor="#e8e8e8"/>
-        </StackLayout>
-        <StackLayout VerticalOptions="StartAndExpand" Orientation="Horizontal">
-            
-            <Button x:Name="TakePhoto" 
+                </StackLayout>
+                <StackLayout VerticalOptions="StartAndExpand" Orientation="Horizontal">
+
+                    <Button x:Name="TakePhoto" 
                     Text="Камера" 
                     HorizontalOptions="FillAndExpand"
                     Clicked="TakePhoto_Clicked"
@@ -22,51 +29,54 @@
                     BackgroundColor="#00b2ff"
                     TextColor="White"/>
 
-            <Button x:Name="PhotoGetAsync"
+                    <Button x:Name="PhotoGetAsync"
                     Text="Галерея" 
                     HorizontalOptions="FillAndExpand"
                     Clicked="PhotoGetAsync_Clicked"
                     CornerRadius="200"
                     BackgroundColor="#00b2ff"
                     TextColor="White"/>
-            
-        </StackLayout>
-        
-        <StackLayout>
-            
-            <Button Text="Добавить"
+
+                </StackLayout>
+
+                <StackLayout>
+
+                    <Button Text="Добавить"
              x:Name="AddImage"
              Clicked="AddImage_Clicked"
              CornerRadius="200"
              BackgroundColor="#00b2ff"
               TextColor="White"/>
-            
-        </StackLayout>
-        
-        
-        <ListView
+
+                </StackLayout>
+                
+                <ListView
             x:Name="imgList"
             HasUnevenRows="True"
             ItemSelected="imgList_ItemSelected">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <SwipeView>
-                            <SwipeView.RightItems>
-                                <SwipeItems>
-                                    <SwipeItem Text="Delete"
-                                     BackgroundColor="LightPink"
-                                     Clicked="SwipeItem_Clicked"/>
-                                </SwipeItems>
-                            </SwipeView.RightItems>
-                            <StackLayout>
-                                <Image Source="{Binding Puth }"/>
-                                <Label Text="{Binding Name}" />
-                            </StackLayout>
-                        </SwipeView>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <SwipeView>
+                                    <SwipeView.RightItems>
+                                        
+                                        <SwipeItems>
+                                            <SwipeItem Text="Delete"
+                                     BackgroundColor="LightPink"/>
+                                        </SwipeItems>
+                                    </SwipeView.RightItems>
+                                    
+                                    <StackLayout>
+                                        <Image Source="{Binding Puth }"/>
+                                        <Label Text="{Binding Name}" />
+                                    </StackLayout>
+                                    
+                                </SwipeView>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </RefreshView>
 </ContentPage>

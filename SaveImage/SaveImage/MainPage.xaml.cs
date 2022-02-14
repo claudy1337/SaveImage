@@ -15,6 +15,7 @@ using SaveImage.sql;
 using SaveImage.Page;
 
 
+
 namespace SaveImage
 {
     public partial class MainPage : ContentPage
@@ -89,10 +90,10 @@ namespace SaveImage
             await Navigation.PushAsync(imagePage);
         }
 
-        private void SwipeItem_Clicked(object sender, EventArgs e)
+        private async void UpdateWiev_Refreshing(object sender, EventArgs e)
         {
-            var project = (ImageS)BindingContext;
-            App.Db.DeleteItem(project.Id);
+           await Task.Delay(1000);
+            UpdateWiev.IsRefreshing = false;
             UpdateList();
         }
     }

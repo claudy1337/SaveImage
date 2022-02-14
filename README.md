@@ -27,6 +27,12 @@ Packages NuGet
 - Google Fonts  **_MaterialIcons-Regular.ttf_** 
 [тык](https://github.com/google/material-design-icons/blob/master/font/MaterialIcons-Regular.ttf)
 
+RefreshView and SwipeItems
+===========
+- `UpdateWiev` up swipe update project list
+- `SwipeDeleted` right swipe deleted project
+
+
 author
 ===========
 ![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)

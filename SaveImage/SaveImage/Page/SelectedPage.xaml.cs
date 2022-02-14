@@ -9,7 +9,7 @@ using Xamarin.Forms.Xaml;
 
 namespace SaveImage.Page
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
+    
     public partial class SelectedPage : ContentPage
     {
         public SelectedPage()

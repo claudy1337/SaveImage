@@ -17,12 +17,14 @@ using SaveImage.Page;
 
 namespace SaveImage
 {
+
     public partial class MainPage : ContentPage
     {
         public string pathName;
         public MainPage()
         {
             InitializeComponent();
+            
         }
 
         protected override void OnAppearing()
@@ -35,6 +37,7 @@ namespace SaveImage
         {
             LVProject.ItemsSource = App.Db.GetItems();
         }
+        
 
 
         private void AddImage_Clicked(object sender, EventArgs e)

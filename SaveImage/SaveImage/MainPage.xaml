@@ -51,7 +51,7 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <SwipeView>
+                                <SwipeView BackgroundColor="White">
                                     <SwipeView.RightItems>
 
                                         <SwipeItems>
@@ -63,8 +63,8 @@
                                     <StackLayout>
                                         
                                    
-                                    <Label Text="{Binding Name}" TextColor="Black" FontSize="15"/>
-                                        <Image Source="{Binding Puth }" HeightRequest="130" />
+                                    <Label Text="{Binding Name}" TextColor="Black" FontSize="19" />
+                                        <Image Source="{Binding Puth }" HeightRequest="160" x:Name="Imageq" HorizontalOptions="CenterAndExpand"/>
 
                                     </StackLayout>
 

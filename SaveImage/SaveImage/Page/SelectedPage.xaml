@@ -2,14 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SaveImage.Page.SelectedPage"
-             xmlns:local="clr-namespace:SaveImage">
+             xmlns:local="clr-namespace:SaveImage"
+             BackgroundColor="White">
     <ContentPage.Content>
         <StackLayout Padding="30" Spacing="30">
             <Entry Text="{Binding Name}"
                Visual="Material"
                BackgroundColor="#e8e8e8"
                IsReadOnly="True"
-               Placeholder="Name"/>
+               Placeholder="Название"/>
             
             <local:PinchToZoomContainer>
                 <local:PinchToZoomContainer.Content>

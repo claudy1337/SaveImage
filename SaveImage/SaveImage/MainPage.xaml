@@ -3,21 +3,60 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SaveImage.MainPage"
              NavigationPage.HasNavigationBar="False"
-             Visual="Default">
+             Visual="Default"
+             BackgroundColor="White">
     <StackLayout Padding="30" Spacing="30">
         <StackLayout>
-            <Entry x:Name="nameImg" Placeholder="Введите название"/>
+            <Entry x:Name="Name" 
+               Placeholder="Введите название" 
+               Visual="Material"
+               BackgroundColor="#e8e8e8"/>
         </StackLayout>
-        <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
-            <Button x:Name="GetPhoto" Text="Галерея" 
-                    HorizontalOptions="FillAndExpand"/>
-            <Button x:Name="PhotoGetAsync"
+        <StackLayout VerticalOptions="StartAndExpand" Orientation="Horizontal">
+            
+            <Button x:Name="TakePhoto" 
                     Text="Камера" 
-                    HorizontalOptions="FillAndExpand"/>
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="TakePhoto_Clicked"
+                    CornerRadius="200"
+                    BackgroundColor="#00b2ff"
+                    TextColor="White"/>
+
+            <Button x:Name="PhotoGetAsync"
+                    Text="Галерея" 
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="PhotoGetAsync_Clicked"
+                    CornerRadius="200"
+                    BackgroundColor="#00b2ff"
+                    TextColor="White"/>
+            
         </StackLayout>
+        
         <StackLayout>
             
-            <Button Text="Добавить" />
+            <Button Text="Добавить"
+             x:Name="AddImage"
+             Clicked="AddImage_Clicked"
+             CornerRadius="200"
+             BackgroundColor="#00b2ff"
+              TextColor="White"/>
+            
         </StackLayout>
+
+        <ListView
+            x:Name="imgList"
+            HasUnevenRows="True"
+            ItemSelected="imgList_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Image Source="{Binding Puth }" />
+                            <Label Text="{Binding Name}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
 </ContentPage>

@@ -7,7 +7,7 @@ using System.IO;
 namespace SaveImage.sql
 {
     [Table("Project")]
-    internal class Image
+    internal class ImageS
     {
         [PrimaryKey, AutoIncrement, Column("_id")]
         [Unique]

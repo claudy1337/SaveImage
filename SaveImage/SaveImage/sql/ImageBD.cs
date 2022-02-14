@@ -12,25 +12,25 @@ namespace SaveImage.sql
         public ImageBD(string dbPath)
         {
             db = new SQLiteConnection(dbPath);
-            db.CreateTable<Image>();
+            db.CreateTable<ImageS>();
         }
 
-        public IEnumerable<Image> GetItems()
+        public IEnumerable<ImageS> GetItems()
         {
-            return db.Table<Image>().ToList();
+            return db.Table<ImageS>().ToList();
         }
 
-        public Image GetItem(int id)
+        public ImageS GetItem(int id)
         {
-            return db.Get<Image>(id);
+            return db.Get<ImageS>(id);
         }
 
         public int DeleteItem(int id)
         {
-            return db.Delete<Image>(id);
+            return db.Delete<ImageS>(id);
         }
 
-        public int SaveItem(Image item)
+        public int SaveItem(ImageS item)
         {
             if (item.Id != 0)
             {

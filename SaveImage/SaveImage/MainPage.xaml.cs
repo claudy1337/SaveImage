@@ -38,15 +38,13 @@ namespace SaveImage
             LVProject.ItemsSource = App.Db.GetItems();
         }
         
-
-
         private void AddImage_Clicked(object sender, EventArgs e)
         {
             ImageS img = new ImageS();
             img.Name = Name.Text;
             img.Puth = pathName;
             App.Db.SaveItem(img);
-            Name.Text = "";
+            
             UpdateList();
         }
         private async void PhotoGetAsync_Clicked(object sender, EventArgs e)
@@ -106,9 +104,14 @@ namespace SaveImage
 
         private async void SwipeItem_Invoked(object sender, EventArgs e)
         {
-            //var project = (ImageS)BindingContext;
-            //    App.Db.DeleteItem(project.Id);
+            
            
+        }
+
+        private void SwipeItem_Clicked(object sender, EventArgs e)
+        {
+            var project = (sender as SwipeItem).BindingContext as ImageS;
+            App.Db.DeleteItem(project.Id);
         }
     }
 }

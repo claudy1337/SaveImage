@@ -54,18 +54,16 @@
                             <ViewCell>
                                 <SwipeView BackgroundColor="White">
                                     <SwipeView.RightItems>
-
                                         <SwipeItems>
                                             <SwipeItem Text="Delete"
                                      BackgroundColor="LightPink"
-                                                       Invoked="SwipeItem_Invoked"/>
+                                                       Invoked="SwipeItem_Invoked"
+                                                       Clicked="SwipeItem_Clicked"/>
                                         </SwipeItems>
                                     </SwipeView.RightItems>
                                     <StackLayout>
-                                        
-                                   
-                                    <Label Text="{Binding Name}" TextColor="Black" FontSize="19" />
-                                        <Image Source="{Binding Puth }" HeightRequest="160" x:Name="Imageq" HorizontalOptions="CenterAndExpand"/>
+                                        <Label Text="{Binding Name}" TextColor="Black" FontSize="19" />
+                                        <Image Source="{Binding Puth}" HeightRequest="160" x:Name="Imageq" HorizontalOptions="CenterAndExpand"/>
                                         
                                     </StackLayout>
 
